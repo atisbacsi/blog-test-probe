@@ -1,5 +1,11 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { Configuration } from './service/configuration';
+import { PostService } from './service/post.service';
+import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { CommentService } from './service/comment.service';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -7,6 +13,12 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent
       ],
+      imports: [ BrowserModule, HttpClientModule, HttpClientTestingModule ],      
+      providers: [
+        {provide: Configuration, useValue:{serverUrl: 'http://localhost:3000'}},
+         PostService,
+         CommentService
+        ],      
     }).compileComponents();
   }));
 
@@ -22,10 +34,5 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('jjj');
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('jjj app is running!');
-  });
+
 });
