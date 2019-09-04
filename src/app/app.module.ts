@@ -7,11 +7,19 @@ import { Configuration } from './service/configuration';
 import { PostService } from './service/post.service';
 import { CommentService } from './service/comment.service';
 import { HttpClientModule } from '@angular/common/http';
+import { CommentComponent } from './comment/comment.component';
+import { PostComponent } from './post/post.component';
+import { CommentlistComponent } from './commentlist/commentlist.component';
+import { PostlistComponent } from './postlist/postlist.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CommentComponent,
+    PostComponent,
+    CommentlistComponent,
+    PostlistComponent
   ],
   imports: [
     BrowserModule,
