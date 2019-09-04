@@ -6,12 +6,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { CommentService } from './service/comment.service';
+import { PostlistComponent } from './postlist/postlist.component';
+import { PostComponent } from './post/post.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
+        PostlistComponent,
+        PostComponent
       ],
       imports: [ BrowserModule, HttpClientModule, HttpClientTestingModule ],      
       providers: [

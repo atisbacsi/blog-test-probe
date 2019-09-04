@@ -13,7 +13,7 @@ export class PostComponent implements OnInit {
   ngOnInit() {
   }
 
-  @Input('data')
+  @Input('postData')
   set post(data: Post) {
     this.postData = data;
   }
