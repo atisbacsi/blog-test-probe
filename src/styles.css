@@ -1,3 +1,5 @@
-body {
+
+:root {
     background: lightcyan;
+    font-size: calc(0.5em + 1vw);
 }

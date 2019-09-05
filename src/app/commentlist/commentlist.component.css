@@ -1,4 +1,18 @@
-.commentlist > a {
-    color: blue;
+.commentlist {
+    padding: 0.2em 3em;
+}
+
+.buttonbar {
+    display: flex;
+    flex-direction: row-reverse;
+}
+.button {
+    flex: 0;
+    background: blue;
+    color: white;
+    border-radius: 0.3em;
+    padding: 0.3em;
+    margin: 0.2em;
     cursor: pointer;
+    white-space: nowrap;
 }

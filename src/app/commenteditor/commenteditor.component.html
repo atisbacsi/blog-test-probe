@@ -1,5 +1,5 @@
 <div class="commenteditor">
-    <div (click)="isEdited=true">
+    <div (click)="isEdited=true" class="displayedText">
             {{text}}
     </div>
     <div *ngIf="isEdited" class="commenteditor_curtain"></div>
@@ -16,9 +16,10 @@
                 </div>      
             </div>
             <div class="buttonbar">
-                <div  *ngIf="!commentContent.invalid" (click)="save()" class="button"><span>Ok</span></div>
-                <div (click)="cancel()" class="button"><span>Abbrechen</span></div>
+                <div  *ngIf="!commentContent.invalid && !isNetworkError" (click)="save()" class="button" [class.is-saving]="isSaving">Ok</div>
+                <div *ngIf="!isSaving" (click)="cancel()" class="button">Abbrechen</div>
             </div>
+            <div *ngIf="isNetworkError" class="networkErrorMessage">Network Error. Please try later.</div>
         </form>
     </div>
 </div>

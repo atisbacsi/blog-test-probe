@@ -25,7 +25,7 @@ export class CommentComponent implements OnInit {
 
   public onSave(text: string) {
     this.commentData.body = text;
-    this.commentService.saveComment(this.commentData).subscribe(d=>console.log(d));
+    this.commentService.saveComment(this.commentData).subscribe( {next: d=>console.log(d), error: e => console.log(e)});
   }
 
 }
