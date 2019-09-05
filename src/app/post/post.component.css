@@ -1,0 +1,27 @@
+.post {
+    display: block;
+    width: 90%;
+    border: solid 1px black;
+    padding: 0.5em;
+    margin: 0.5em;
+}
+
+.head {
+    display: block;
+    background: lightblue;
+}
+.head .post-id {
+    display: inline;
+    padding: 0 2em;
+}
+
+.head .user-id {
+    display: inline;
+    font-style: italic;
+}
+.title {
+}
+
+.body {
+
+}
