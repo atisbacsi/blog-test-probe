@@ -3,6 +3,7 @@
     border-radius: 3em;
     border: cyan 1px solid;
     padding: 2em;
+    margin: 1em;
     box-shadow: 0.2em 0.3em 0.1em 0.02em black;
 }
 .title {

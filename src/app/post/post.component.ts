@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Post } from '../domain/Post';
+import { Post } from '../domain/post';
 
 @Component({
   selector: 'post',

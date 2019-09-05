@@ -2,7 +2,7 @@ import { Injectable, Optional } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Configuration } from './configuration';
 import { Observable } from 'rxjs';
-import { Comment } from '../domain/Comment';
+import { Comment } from '../domain/comment';
 
 @Injectable()
 export class CommentService {

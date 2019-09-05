@@ -1,7 +1,7 @@
 import { Injectable, Optional } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Configuration } from './configuration';
-import { Post } from '../domain/Post';
+import { Post } from '../domain/post';
 import { Observable } from 'rxjs';
 
 

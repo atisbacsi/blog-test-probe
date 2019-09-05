@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Comment } from '../domain/Comment';
+import { Comment } from '../domain/comment';
 import { CommentService } from '../service/comment.service';
 
 @Component({
@@ -25,7 +25,7 @@ export class CommentComponent implements OnInit {
 
   public onSave(text: string) {
     this.commentData.body = text;
-    this.commentService.saveComment(this.commentData);
+    this.commentService.saveComment(this.commentData).subscribe(d=>console.log(d));
   }
 
 }

@@ -3,7 +3,8 @@
         {{text}}
     </div>
     <div *ngIf="editing">
-        <input [(ngModel)]="text">
+	<div contenteditable="true" 
+		     [textContent]="text" (input)="text=$event.target.textContent"></div>
         <div (click)="save()">Ok</div>
     </div>
 </div>
