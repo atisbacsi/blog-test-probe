@@ -1,0 +1,28 @@
+.comment {
+    display: block;
+    width: 70%;
+    border: solid 1px black;
+    padding: 0.5em;
+    margin: 0.5em;
+}
+
+.user {
+    display: flex;
+}
+.user .comment-id {
+    flex: 2;
+    display: inline;
+    padding: 0 2em;
+}
+
+.user .email {
+    flex: 4;
+    display: inline;
+    font-style: italic;
+}
+.user .name {
+    flex: 8;
+    padding: 0 2em;
+    font-weight: bold;
+    display: inline;
+}

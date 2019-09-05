@@ -5,4 +5,7 @@
     </div>
     <div class="title">{{postData.title}}</div>
     <div class="body">{{postData.body}}</div>
+    <div class="commentContainer">
+        <commentlist [post-id]="postData.id"></commentlist>
+    </div>
 </div>

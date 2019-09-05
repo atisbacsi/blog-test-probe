@@ -15,7 +15,7 @@ export class CommentComponent implements OnInit {
   ngOnInit() {
   }
 
-  @Input('data')
+  @Input('commentData')
   set comment(data: Comment) {
     this.commentData = data;
   }

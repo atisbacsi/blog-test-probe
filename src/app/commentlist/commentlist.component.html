@@ -1,1 +1,6 @@
-<p>commentlist works!</p>
+<div *ngIf="isCommentListEmpty()" class="commentlist">
+    <a (click)="toggleComments()">Comments</a>
+    <ng-container *ngIf="showComments">
+        <comment *ngFor="let comment of comments" [commentData] = "comment"></comment>
+    </ng-container>
+</div>
