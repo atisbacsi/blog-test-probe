@@ -1,5 +1,5 @@
-<div class="commenteditor">
-    <div *ngIf="!editing" (click)="editing=true">
+<div class="commenteditor" #editor>
+    <div *ngIf="!editing" (click)="editing(true)">
         {{text}}
     </div>
     <div *ngIf="editing">
