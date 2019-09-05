@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 import { CommentService } from '../service/comment.service';
 
 @Component({
@@ -10,7 +10,8 @@ export class CommenteditorComponent implements OnInit {
 
   private id: number = 0;
   private text: string;
-  private editing: boolean;
+  private origText: string;
+  private isEdited: boolean;
   constructor(private commentService: CommentService) { }
 
   ngOnInit() {
@@ -19,6 +20,7 @@ export class CommenteditorComponent implements OnInit {
   @Input('content')
   set commentId(comment: string){
     this.text = comment;
+    this.origText = comment;
     
   }
 
@@ -26,6 +28,11 @@ export class CommenteditorComponent implements OnInit {
 
   public save(){
     this.emitterSave.emit(this.text);
-    this.editing = false;
+    this.isEdited = false;
+    this.origText = this.text;
+  }
+  public cancel(): void {
+    this.isEdited = false;
+    this.text = this.origText;
   }
 }

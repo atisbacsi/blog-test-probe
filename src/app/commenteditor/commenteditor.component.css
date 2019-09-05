@@ -1,3 +1,39 @@
-.commenteditor {
-    cursor: pointer;
+
+
+.commenteditor_curtain {
+    position: fixed;
+    background-color: rgba(0,0,0,0.5);
+    top: 0.2em;
+    right: 5em;
+    left: 5em;
+    bottom: 0.2em;
+    border-radius: 2em;
+}
+.commenteditor_window {
+    position: fixed;
+    top: 20em;
+    right: 8em;
+    left: 8em;
+    padding: 2em;
+    border-radius: 2em;
+    background-color: white;
+}
+
+
+textarea {
+    width: 95%;
+    height: 100px;
+}
+
+.buttonbar {
+    display: flex;
+    flex-direction: row-reverse;
+}
+.button {
+    flex: 0;
+    background: blue;
+    color: white;
+    border-radius: 0.3em;
+    padding: 0.3em;
+    margin: 0.2em;
 }
