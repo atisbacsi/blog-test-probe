@@ -1,0 +1,9 @@
+<div class="commenteditor">
+    <div *ngIf="!editing" (click)="editing=true">
+        {{text}}
+    </div>
+    <div *ngIf="editing">
+        <input [(ngModel)]="text">
+        <div (click)="save()">Ok</div>
+    </div>
+</div>

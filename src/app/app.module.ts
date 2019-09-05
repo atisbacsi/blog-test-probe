@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
@@ -11,6 +12,7 @@ import { CommentComponent } from './comment/comment.component';
 import { PostComponent } from './post/post.component';
 import { CommentlistComponent } from './commentlist/commentlist.component';
 import { PostlistComponent } from './postlist/postlist.component';
+import { CommenteditorComponent } from './commenteditor/commenteditor.component';
 
 
 @NgModule({
@@ -19,11 +21,13 @@ import { PostlistComponent } from './postlist/postlist.component';
     CommentComponent,
     PostComponent,
     CommentlistComponent,
-    PostlistComponent
+    PostlistComponent,
+    CommenteditorComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule
   ],
   providers: [
     {provide: Configuration, useValue:{serverUrl: 'http://localhost:3000'}},

@@ -14,4 +14,8 @@ export class CommentService {
         return this.http.get<Comment[]>(this.config.serverUrl + '/comments?postId=' + postId );
     }
 
+    saveComment(comment: Comment) : Observable<Comment> {
+        return this.http.post<Comment>(this.config.serverUrl + '/comments', comment);
+    }
+
 } 

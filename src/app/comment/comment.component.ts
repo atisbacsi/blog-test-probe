@@ -10,7 +10,8 @@ import { CommentService } from '../service/comment.service';
 export class CommentComponent implements OnInit {
 
   private commentData: Comment;
-  constructor() { }
+  private editable: boolean;
+  constructor(private commentService: CommentService) { }
 
   ngOnInit() {
   }
@@ -18,6 +19,13 @@ export class CommentComponent implements OnInit {
   @Input('commentData')
   set comment(data: Comment) {
     this.commentData = data;
+
+    this.editable = this.commentData.email === 'Just@do.it';
+  }
+
+  public onSave(text: string) {
+    this.commentData.body = text;
+    this.commentService.saveComment(this.commentData);
   }
 
 }
