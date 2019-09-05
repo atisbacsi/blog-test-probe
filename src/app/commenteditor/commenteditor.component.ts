@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 import { CommentService } from '../service/comment.service';
-import { Comment } from '../domain/Comment';
+import { Comment } from '../domain/comment';
 
 @Component({
   selector: 'commenteditor',
