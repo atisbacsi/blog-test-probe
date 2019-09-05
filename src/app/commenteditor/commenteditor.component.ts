@@ -26,6 +26,18 @@ export class CommenteditorComponent implements OnInit {
 
   @Output('save') emitterSave = new EventEmitter<string>();
 
+  @ViewChild('editor') editorField: ElementRef;
+
+  set editing(ed: boolean){
+    this.editingVal = ed;
+    if(this.editingVal){
+      this.editorField.nativeElement.focus();
+    }
+  }
+  get editing(): boolean {
+    return this.editingVal;
+  }
+
   public save(){
     this.emitterSave.emit(this.text);
     this.isEdited = false;
