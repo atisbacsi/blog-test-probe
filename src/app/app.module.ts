@@ -30,7 +30,12 @@ import { CommenteditorComponent } from './commenteditor/commenteditor.component'
     FormsModule
   ],
   providers: [
-    {provide: Configuration, useValue:{serverUrl: 'http://localhost:3000'}},
+    {
+      provide: Configuration, useValue: {
+        serverUrl: 'http://localhost:3000', 
+        userEmail: 'Just@do.it'
+      }
+    },
     PostService,
     CommentService
   ],

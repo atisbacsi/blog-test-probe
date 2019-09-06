@@ -1,6 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Optional } from '@angular/core';
 import { Comment } from '../domain/comment';
-import { CommentService } from '../service/comment.service';
+import { Configuration } from '../service/configuration';
 
 @Component({
   selector: 'comment',
@@ -11,7 +11,7 @@ export class CommentComponent implements OnInit {
 
   private commentData: Comment;
   private editable: boolean;
-  constructor(private commentService: CommentService) { }
+  constructor(@Optional() private config: Configuration) { }
 
   ngOnInit() {
   }
@@ -20,12 +20,6 @@ export class CommentComponent implements OnInit {
   set comment(data: Comment) {
     this.commentData = data;
 
-    this.editable = this.commentData.email === 'Just@do.it';
+    this.editable = this.commentData.email === this.config.userEmail;
   }
-
-  public onSave(text: string) {
-    this.commentData.body = text;
-    this.commentService.saveComment(this.commentData).subscribe( {next: d=>console.log(d), error: e => console.log(e)});
-  }
-
 }

@@ -7,7 +7,7 @@
     </div>
     <div class="body">
         <ng-container *ngIf="editable">
-            <commenteditor [content]="commentData" (save)="onSave($event)"></commenteditor>
+            <commenteditor [content]="commentData"></commenteditor>
         </ng-container>
         <ng-container *ngIf="!editable">
             {{commentData.body}}
