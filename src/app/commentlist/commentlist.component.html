@@ -1,6 +1,6 @@
 <div *ngIf="isCommentListEmpty()" class="commentlist">
     <div class="buttonbar">
-        <a (click)="toggleComments()" class="button">Toggle comments</a>
+        <a (click)="toggleComments()" class="button">Kommentare Ein- & Ausblenden</a>
     </div>
     <ng-container *ngIf="showComments">
         <comment *ngFor="let comment of comments" [commentData] = "comment"></comment>

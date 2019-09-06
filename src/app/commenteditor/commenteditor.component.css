@@ -20,9 +20,9 @@
 }
 .commenteditor_window {
     position: fixed;
-    top: 20em;
-    right: 8em;
-    left: 8em;
+    top: 8em;
+    right: 7em;
+    left: 7em;
     padding: 2em;
     border-radius: 2em;
     background-color: white;

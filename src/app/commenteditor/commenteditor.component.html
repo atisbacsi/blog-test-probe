@@ -5,6 +5,7 @@
     <div *ngIf="isEdited" class="commenteditor_curtain"></div>
     <div *ngIf="isEdited" class="commenteditor_window">
         <form>
+            Bitte tippen Sie ihren Kommentar ein (max. 200 Zeichen):
             <textarea id="commentContent" name="commentContent" required maxlength="200" [(ngModel)]="text" #commentContent="ngModel" ></textarea>
       
             <div *ngIf="commentContent.invalid">      
