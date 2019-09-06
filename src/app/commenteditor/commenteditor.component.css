@@ -1,10 +1,12 @@
 
 .displayedText {
     cursor: pointer;
-    border: white solid 1px;
+    background-color: rgba(0,0,0,0.05);
+    box-shadow: 0.02em 0.02em 0.2em 0.02em black inset;
+    border-radius: 0.2em;
+    padding: 0.2em;
 }
 .displayedText:hover {
-    border: gray solid 1px;
     background-color: azure;
 }
 .commenteditor_curtain {
