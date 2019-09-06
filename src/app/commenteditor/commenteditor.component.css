@@ -34,6 +34,11 @@ textarea {
     height: 100px;
 }
 
+.error {
+    color: red;
+    font-weight: bold;
+}
+
 .buttonbar {
     display: flex;
     flex-direction: row-reverse;
