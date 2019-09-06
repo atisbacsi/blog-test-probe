@@ -9,6 +9,7 @@
 .user {
     display: flex;
     width: 100%;
+    padding-bottom: 0.5em;
 }
 .user .comment-id {
     flex: 2;
