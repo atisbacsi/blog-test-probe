@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css?family=Life+Savers:700');
-
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto:400,700&display=swap');
 :root {
     background: lightcyan;
     font-size: calc(0.5em + 2vw);
+    font-family: 'Roboto', sans-serif;
 }
 
 @media (min-width: 50em) { /*font-size: default = 16px*/

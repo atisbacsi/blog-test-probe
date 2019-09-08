@@ -1,9 +1,17 @@
 .comment {
     display: block;
-    /* width: 95%; */
-    border: solid 1px black;
     padding: 0.5em;
     margin: 0.5em;
+}
+
+.comment {
+    border-top: solid 1px black;
+}
+
+@media(min-width: 50em) {
+    .comment {
+        border: solid 1px black;
+    }
 }
 
 .user {

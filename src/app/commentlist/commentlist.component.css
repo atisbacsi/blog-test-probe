@@ -16,3 +16,15 @@
     cursor: pointer;
     white-space: nowrap;
 }
+.button-long {
+    display: none;
+}
+@media(min-width: 50em) {
+    .button-short {
+        display: none;
+    }    
+    .button-long {
+        display: block;
+    }
+    
+}
