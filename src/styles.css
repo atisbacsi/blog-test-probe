@@ -1,5 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Life+Savers:700');
 
 :root {
     background: lightcyan;
-    font-size: calc(0.5em + 1vw);
+    font-size: calc(0.5em + 2vw);
 }
+
+@media (min-width: 50em) { /*font-size: default = 16px*/
+    :root {
+        font-size: 24px;
+    }
+    .app {
+        max-width: 33.333em;
+    }
+}
+

@@ -28,7 +28,7 @@ describe('PostlistComponent', () => {
       providers: [
         {provide: Configuration, useValue:{serverUrl: 'http://localhost:3000'}},
         CommentService
-        ], 
+        ]
     })
     .compileComponents();
   }));
@@ -49,8 +49,16 @@ describe('PostlistComponent', () => {
     fixture.detectChanges();
     const postElement = fixture.debugElement.query(By.css('.post'));
 
-
     expect(postElement).toBeTruthy();
+  });
+
+  it('should have many Posts', () => {
+    component.posts = [{id: 1, userId: 12, title: 'Title', body: 'Body Text'}, {id: 2, userId: 12, title: 'Title2', body: 'Body Text2'}]
+    
+    fixture.detectChanges();
+
+    const postElements = fixture.nativeElement.querySelectorAll('.post')
+    expect(postElements.length).toBe(2);
   });
 
 });

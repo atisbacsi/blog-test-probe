@@ -5,13 +5,11 @@
         <div class="email">(<a href="mailto:{{commentData.email}}">{{commentData.email}}</a>)</div>    
         <!-- <div class="comment-id">#{{commentData.id}}</div> -->
     </div>
-    <div class="body">
-        <ng-container *ngIf="editable">
-            <commenteditor [content]="commentData"></commenteditor>
-        </ng-container>
-        <ng-container *ngIf="!editable">
-            {{commentData.body}}
-        </ng-container>
+    <ng-container *ngIf="!editable">
+        <div class="body">{{commentData.body}}</div>
+    </ng-container>
+    <ng-container *ngIf="editable">
+        <commenteditor [content]="commentData"></commenteditor>
+    </ng-container>
 
-    </div>
 </div>

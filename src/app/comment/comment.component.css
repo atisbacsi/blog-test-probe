@@ -8,8 +8,14 @@
 
 .user {
     display: flex;
+    flex-direction: column;
     width: 100%;
     padding-bottom: 0.5em;
+}
+@media(min-width: 50em) {
+    .user {
+        flex-direction: row;
+    }
 }
 .user .comment-id {
     flex: 2;
