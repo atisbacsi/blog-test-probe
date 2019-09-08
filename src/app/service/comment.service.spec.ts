@@ -10,13 +10,14 @@ describe('Comment Service', () => {
 
     let httpClientSpy: jasmine.SpyObj<HttpClient>;
     let httpClientService: HttpClient;
+    let exampleServerUrl: string = 'https://thisisaserver'; 
 
     beforeEach(() => {
       httpClientSpy = jasmine.createSpyObj('HttpClient', ['get', 'put']);
 
       TestBed.configureTestingModule({
         providers: [
-            {provide: Configuration, useValue:{serverUrl: 'http://localhost:3000'}},
+            {provide: Configuration, useValue:{serverUrl: exampleServerUrl}},
             {provide: HttpClient, useValue: httpClientSpy},
             CommentService
             ],
@@ -25,6 +26,7 @@ describe('Comment Service', () => {
       httpClientService = TestBed.get(HttpClient);
       
     });
+
     it('should load comments with the method "getCommentsByPost(postId: number)"', () => {
       const exampleComment: Comment = {id: 1, postId: 123654, name: 'Name', email: 'etwas@istmireg.al', body: 'Body Text'};
       const ret: Observable<Comment[]>  = of([exampleComment]);
@@ -37,7 +39,7 @@ describe('Comment Service', () => {
         expect(v).toEqual([exampleComment]);
       });
       expect(httpClientService.get).toHaveBeenCalledTimes(1);
-      expect(httpClientService.get).toHaveBeenCalledWith('http://localhost:3000/comments?postId=123');
+      expect(httpClientService.get).toHaveBeenCalledWith('https://thisisaserver/comments?postId=123');
     });    
 
     it('should save comment the method "saveComment(comment: Comment)"', () => {
@@ -52,6 +54,6 @@ describe('Comment Service', () => {
         expect(v).toEqual([exampleComment]);
       });
       expect(httpClientService.put).toHaveBeenCalledTimes(1);
-      expect(httpClientService.put).toHaveBeenCalledWith('http://localhost:3000/comments/1', exampleComment);
+      expect(httpClientService.put).toHaveBeenCalledWith('https://thisisaserver/comments/1', exampleComment);
     });  
 });

@@ -34,25 +34,31 @@ export class CommenteditorComponent implements OnInit {
     return this.origComment;
   }
 
+  public isEditedtextNotTooBig(): boolean {
+    return this.editedtext.length <= 200;
+  }
+
   public save(){
-    this.isSaving = true;
-
-    let newComment: Comment = Object.assign({}, this.comment);
-    newComment.body = this.editedtext;
-
-    this.commentService.saveComment(newComment).subscribe( {
-      next: d=>{
-        this.comment = d;
-      }, 
-      error: e =>{
-        this.isSaving = false;
-        this.hasNetworkError = true;
-      },
-      complete: () => {
-        this.isSaving = false;
-        this.isEditing = false;
-      }
-    });
+    if (this.isEditedtextNotTooBig()) {
+      this.isSaving = true;
+  
+      let newComment: Comment = Object.assign({}, this.comment);
+      newComment.body = this.editedtext;
+  
+      this.commentService.saveComment(newComment).subscribe( {
+        next: d=>{
+          this.comment = d;
+        }, 
+        error: e =>{
+          this.isSaving = false;
+          this.hasNetworkError = true;
+        },
+        complete: () => {
+          this.isSaving = false;
+          this.isEditing = false;
+        }
+      });
+    }
     
   }
   public cancel(): void {

@@ -4,17 +4,17 @@
         <div class="commenteditor_window">
             <form>
                 Bitte tippen Sie ihren Kommentar ein (max. 200 Zeichen):
-                <textarea id="commentContent" name="commentContent" required maxlength="200" [(ngModel)]="editedtext" #commentContent="ngModel" ></textarea>
+                <textarea id="commentContent" name="commentContent" required [(ngModel)]="editedtext" #commentContent="ngModel" ></textarea>
                 <div *ngIf="commentContent.invalid">      
                     <div *ngIf="commentContent.errors.required" class="error">
-                        Body ist obligatorisch.
+                        Der Kommentartext ist obligatorisch.
                     </div>
-                    <div *ngIf="commentContent.errors.maxlength"class="error">
-                        Body kann maximal 200 Zeichen bestehen.
-                    </div>      
                 </div>
+                <div *ngIf="!isEditedtextNotTooBig()"class="error">
+                    Der Kommentartext kann bis zu 200 Zeichen lang sein.
+                </div>      
                 <div class="buttonbar">
-                    <div  *ngIf="!commentContent.invalid && !hasNetworkError" (click)="save()" class="button savebutton" [class.is-saving]="isSaving">Ok</div>
+                    <div *ngIf="!commentContent.invalid && !hasNetworkError && isEditedtextNotTooBig()" (click)="save()" class="button savebutton" [class.is-saving]="isSaving">Ok</div>
                     <div *ngIf="!isSaving" (click)="cancel()" class="button cancelbutton">Abbrechen</div>
                 </div>
                 <div *ngIf="hasNetworkError" class="networkErrorMessage error">Netzwerk Fehler. Bitte versuchen Sie es in einem späteren Zeitpunkt.</div>
