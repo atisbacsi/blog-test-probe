@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Comment } from '../domain/comment';
 import { CommentService } from '../service/comment.service';
 
@@ -7,26 +7,25 @@ import { CommentService } from '../service/comment.service';
   templateUrl: './commentlist.component.html',
   styleUrls: ['./commentlist.component.css']
 })
-export class CommentlistComponent implements OnInit {
+export class CommentlistComponent {
 
   private comments: Comment[] = [];
-  private showComments: boolean;
-  constructor(private commentService: CommentService) { 
-    
-  }
+  showComments: boolean;
+  constructor(private commentService: CommentService) { }
   
-  ngOnInit() {
-  }
+
   @Input("post-id")
   set postId(postId: number){
-    this.commentService.getCommentsByPost(postId).subscribe(d => this.comments = d);
+    this.commentService.getCommentsByPost(postId).subscribe(d => {
+      this.comments = d
+    });
   }
 
   toggleComments(): void {
     this.showComments = !this.showComments;
   }
 
-  isCommentListEmpty(): boolean {
+  isCommentListNotEmpty(): boolean {
     return this.comments.length > 0;
   }
 }

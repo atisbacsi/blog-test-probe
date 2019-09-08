@@ -47,7 +47,7 @@ describe('PostlistComponent', () => {
     component.posts = [{id: 1, userId: 12, title: 'Title', body: 'Body Text'}]
     
     fixture.detectChanges();
-    const postElement = fixture.debugElement.query(By.css('.post'));
+    const postElement = fixture.debugElement.query(By.directive(PostComponent));
 
     expect(postElement).toBeTruthy();
   });
