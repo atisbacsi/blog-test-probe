@@ -5,10 +5,8 @@
             <form>
                 Bitte tippen Sie ihren Kommentar ein (max. 200 Zeichen):
                 <textarea id="commentContent" name="commentContent" required [(ngModel)]="editedtext" #commentContent="ngModel" ></textarea>
-                <div *ngIf="commentContent.invalid">      
-                    <div *ngIf="commentContent.errors.required" class="error">
-                        Der Kommentartext ist obligatorisch.
-                    </div>
+                <div *ngIf="commentContent.invalid && commentContent.errors.required" class="error">
+                    Der Kommentartext ist obligatorisch.
                 </div>
                 <div *ngIf="!isEditedtextNotTooBig()"class="error">
                     Der Kommentartext kann bis zu 200 Zeichen lang sein.

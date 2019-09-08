@@ -69,7 +69,9 @@ describe('CommenteditorComponent', () => {
   })
 
   it('should have a commenteditor_curtain after a click', () => {
-
+    component.comment = exampleComment;
+    fixture.detectChanges();
+    
     const text = fixture.debugElement.query(By.css('.displayedText'));
     text.triggerEventHandler('click', null);
     fixture.detectChanges();
@@ -133,7 +135,7 @@ describe('CommenteditorComponent', () => {
   
   });
 
-  it('should have a Cance button that closes popup', () => {
+  it('should have a Cancel button that closes popup', () => {
     component.comment = exampleComment;
     component.isEditing = true;
     fixture.detectChanges();
@@ -151,7 +153,7 @@ describe('CommenteditorComponent', () => {
   
   });
 
-  it('should have a Cance button that clears up flags', () => {
+  it('should have a Cancel button that clears up flags', () => {
     component.comment = exampleComment;
     component.isEditing = true;
     fixture.detectChanges();
