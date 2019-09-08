@@ -5,7 +5,7 @@ import { PostService } from './post.service';
 import { Observable, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
-describe('Post Service test', () => {
+describe('Post Service', () => {
 
 
     let httpClientSpy: jasmine.SpyObj<HttpClient>;
@@ -21,14 +21,11 @@ describe('Post Service test', () => {
             PostService
             ],
       });
-  
-      // Inject the http service and test controller for each test
-      // httpClient = TestBed.get(HttpClient);
-      // httpTestingController = TestBed.get(HttpTestingController);
+
       httpClientService = TestBed.get(HttpClient);
       
     });
-    it('can test HttpClient.get', () => {
+    it('should load posts with the method "getPosts()"', () => {
       const examplePost: Post = {id: 1, userId: 12, title: 'Title', body: 'Body Text'};
       const ret: Observable<Post[]>  = of([examplePost]);
       httpClientSpy.get.and.returnValue(ret);
