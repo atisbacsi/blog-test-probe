@@ -45,3 +45,7 @@
     font-weight: bold;
     display: inline;
 }
+
+.body {
+    word-wrap: break-word;
+}
