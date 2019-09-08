@@ -8,8 +8,8 @@
 }
 .button {
     flex: 0;
-    background: blue;
-    color: white;
+    background: var(--button-bg-color);
+    color: var(--button-text-color);
     border-radius: 0.3em;
     padding: 0.3em;
     margin: 0.2em;

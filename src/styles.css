@@ -1,6 +1,24 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto:400,700&display=swap');
 :root {
-    background: lightcyan;
+    
+    /**
+      Colorpalette
+    */
+    --text-color: hsl(262, 86%, 6%);
+    --text-error-color: hsl(21, 97%, 54%);
+    --background-color: hsl(21, 16%, 77%);
+    --main-border-color: hsl(21, 76%, 76%);
+    --post-head-bgcolor: hsl(21, 45%, 54%);
+    --post-head-text-color: hsl(20, 74%, 15%);
+    --button-bg-color:hsl(261, 80%, 16%);
+    --button-text-color:hsl(21, 64%, 76%);
+    --email-text-color: hsl(261, 93%, 46%);
+    --editable-comment-bg-color: hsl(26, 19%, 93%);
+    --editable-comment-bg-hover-color: hsl(261, 45%, 91%);
+    --modal-window-bg-color:hsl(26, 19%, 93%);
+
+    background: var(--background-color);
+    color: var(--text-color);
     font-size: calc(0.5em + 2vw);
     font-family: 'Roboto', sans-serif;
 }

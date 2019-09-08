@@ -1,13 +1,13 @@
 
 .displayedText {
     cursor: pointer;
-    background-color: rgba(0,0,0,0.05);
+    background-color: var(--editable-comment-bg-color);
     box-shadow: 0.02em 0.02em 0.2em 0.02em black inset;
     border-radius: 0.2em;
     padding: 0.2em;
 }
 .displayedText:hover {
-    background-color: azure;
+    background-color: var(--editable-comment-bg-hover-color);
 }
 .commenteditor_curtain {
     position: fixed;
@@ -24,7 +24,7 @@
     padding: 2em;
     max-width: 30em;
     border-radius: 2em;
-    background-color: white;
+    background-color: var(--modal-window-bg-color);
 }
 
 textarea {
@@ -34,7 +34,7 @@ textarea {
 }
 
 .error {
-    color: red;
+    color: var(--text-error-color);
     font-weight: bold;
 }
 
@@ -44,9 +44,9 @@ textarea {
 }
 .button {
     flex: 0;
-    background: blue;
+    background: var(--button-bg-color);
     cursor: pointer;
-    color: white;
+    color: var(--button-text-color);
     border-radius: 0.3em;
     padding: 0.3em;
     margin: 0.2em;

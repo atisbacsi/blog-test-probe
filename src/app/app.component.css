@@ -1,7 +1,8 @@
 .app {
     background: white;
     border-radius: 3em;
-    border: cyan 1px solid;
+    border: 1px solid;
+    border-color: var(--main-border-color);
     padding: 2em 0.2em;
     margin: 1em auto;
     box-shadow: 0.2em 0.3em 0.1em 0.02em black;

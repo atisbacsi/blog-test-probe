@@ -8,7 +8,8 @@
 
 .head {
     display: block;
-    background: lightblue;
+    background: var(--post-head-bgcolor);
+    color: var(--post-head-text-color);
 }
 .head .post-id {
     display: inline;
