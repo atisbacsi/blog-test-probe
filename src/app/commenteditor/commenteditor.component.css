@@ -17,17 +17,15 @@
     left: 1em;
     bottom: 0.2em;
     border-radius: 2em;
+    padding: 0.5em;
 }
 .commenteditor_window {
-    position: fixed;
-    top: 8em;
-    right: 2em;
-    left: 2em;
+    margin: 1em auto 0 auto;
     padding: 2em;
+    max-width: 30em;
     border-radius: 2em;
     background-color: white;
 }
-
 
 textarea {
     width: 95%;
