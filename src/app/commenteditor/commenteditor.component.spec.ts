@@ -146,7 +146,6 @@ describe('CommenteditorComponent', () => {
     fixture.detectChanges();
 
     expect(component.isEditing).toBeFalsy();
-    const commentEditorWindow = fixture.nativeElement.querySelector('.commenteditor_window');
     const vorhang = fixture.nativeElement.querySelector('.commenteditor_curtain');      
     expect(vorhang).toBeFalsy();
   
