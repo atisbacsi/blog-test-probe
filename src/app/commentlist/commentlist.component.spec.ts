@@ -22,7 +22,6 @@ describe('CommentlistComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-
         CommentlistComponent,
         CommentComponent,
         CommenteditorComponent
@@ -79,7 +78,7 @@ describe('CommentlistComponent', () => {
     expect(commentComponent).toBeFalsy();
   });
 
-  fit('should have a Button that triggers toggleComments() function', () => {
+  it('should have a Button that triggers toggleComments() function', () => {
 
     component.postId = 1;    
     fixture.detectChanges();

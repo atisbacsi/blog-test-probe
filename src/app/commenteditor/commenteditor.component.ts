@@ -9,12 +9,15 @@ import { Comment } from '../domain/comment';
 })
 export class CommenteditorComponent implements OnInit {
 
-  private id: number = 0;
-  private text: string;
   private origComment: Comment;
-  private isEdited: boolean = false;
-  private isNetworkError: boolean;
-  private isSaving: boolean;
+  private text: string;
+  editedtext: string;
+
+
+  isEditing: boolean;
+  hasNetworkError: boolean;
+  isSaving: boolean;
+
   constructor(private commentService: CommentService) { }
 
   ngOnInit() {
@@ -22,18 +25,20 @@ export class CommenteditorComponent implements OnInit {
 
   @Input('content')
   set comment(comment: Comment){
-    this.text = comment.body;
     this.origComment = comment;
+    this.text = comment.body;
+    this.editedtext = this.text;
   }
 
-  @Output('save') emitterSave = new EventEmitter<string>();
+  get comment(): Comment {
+    return this.origComment;
+  }
 
   public save(){
-    this.emitterSave.emit(this.text);
     this.isSaving = true;
 
-    let newComment: Comment = Object.assign({}, this.origComment);
-    newComment.body = this.text;
+    let newComment: Comment = Object.assign({}, this.comment);
+    newComment.body = this.editedtext;
 
     this.commentService.saveComment(newComment).subscribe( {
       next: d=>{
@@ -41,20 +46,19 @@ export class CommenteditorComponent implements OnInit {
       }, 
       error: e =>{
         this.isSaving = false;
-        this.isNetworkError = true;
-        this.text = this.origComment.body;
+        this.hasNetworkError = true;
       },
       complete: () => {
         this.isSaving = false;
-        this.isEdited = false;
+        this.isEditing = false;
       }
     });
-
+    
   }
   public cancel(): void {
-    this.isEdited = false;
+    this.isEditing = false;
     this.isSaving = false;
-    this.isNetworkError = false;
-    this.text = this.origComment.body;
+    this.hasNetworkError = false;
+    this.editedtext = this.text;
   }
 }
