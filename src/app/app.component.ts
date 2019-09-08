@@ -9,7 +9,6 @@ import { CommentService } from './service/comment.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'jjj';
   private posts: Post[];
   constructor(private postService: PostService, private commentService: CommentService) {
     
@@ -19,7 +18,9 @@ export class AppComponent {
   }
 
   loadPosts() : void {
-    this.postService.getPosts().subscribe(p => this.posts = p);
+    this.postService.getPosts().subscribe(p => {
+      this.posts = p;
+    });
   }
 
 }
