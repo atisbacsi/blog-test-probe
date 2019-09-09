@@ -1,7 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PostComponent } from './post.component';
-import { Post } from '../domain/Post';
 import { CommentlistComponent } from '../commentlist/commentlist.component';
 import { CommentComponent } from '../comment/comment.component';
 import { CommenteditorComponent } from '../commenteditor/commenteditor.component';

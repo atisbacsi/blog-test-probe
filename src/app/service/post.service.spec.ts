@@ -1,5 +1,5 @@
 import { TestBed } from '@angular/core/testing';
-import { Post } from '../domain/Post';
+import { Post } from '../domain/post';
 import { Configuration } from './configuration';
 import { PostService } from './post.service';
 import { Observable, of } from 'rxjs';
